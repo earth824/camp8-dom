@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+    <style>
+      .alert {
+        padding: 15px;
+        border: 1px solid #d6e9c6;
+        border-radius: 4px;        
+      }
+      .success {
+        color: #3c763d;
+        background-color: #dff0d8;
+      }
+      .danger {
+        background-color: #dc3545;
+        color: white
+      }      
+    </style>
+  </head>
+  <body>
+    <!-- #1
+    <button>Click to hide the text</button>
+    <p>Text</p> -->
+
+    <!-- #2
+    <button class="q2">Click to hide me</button> -->
+      
+    <!-- #3
+    <button>Hide</button>
+    <p>Click to hide me</p> -->
+    
+    <!-- #4
+    Province: 
+    <select name="province" class="province">
+      <option value="bangkok">Bangkok</option>
+      <option value="nonthaburi">Nonthaburi</option>
+    </select>
+    District: 
+    <select name="district" class="district">
+      <option value="ratchathewi">Ratchathewi</option>
+      <option value="pathumwan">Pathumwan</option>
+    </select> -->
+
+    <button onclick="clickButton(this)" value="add">+</button>
+    <button onclick="clickButton(this)" value="subtract">-</button>
+    <button onclick="clickButton(this)" value="reset">Reset</button>
+    <h1 class="count"></h1>
+    <script>      
+      // #1
+      // const btn = document.querySelector('button');
+      // btn.addEventListener('click', () => {
+      //   document.querySelector('p').style.display = 'none';
+      // });
+
+      // #2
+      // const btn2 = document.querySelector('.q2');
+      // btn2.addEventListener('click', () => {
+      //   btn2.hidden = true;
+      // });
+
+      // #3
+      // const btn = document.querySelector('button');
+      // btn.addEventListener('click', function() {
+      //   this.innerHTML = this.innerHTML === 'Show' ? 'Hide' : 'Show';
+      //   const p = document.querySelector('p');
+      //   p.hidden = !p.hidden;
+      // });
+
+      // #4
+      // const mapProvinceDistrict = {
+      //   bangkok: [
+      //     {
+      //       value: 'ratchathewi',
+      //       name: 'Ratchathewi'
+      //     },
+      //     {
+      //       value: 'pathumwan',
+      //       name: 'Pathumwan'
+      //     },
+      //     {
+      //       value: 'phyathai',
+      //       name: 'Phyathai'
+      //     }
+      //   ],
+      //   nonthaburi: [
+      //     {
+      //       value: 'muang',
+      //       name: 'Muang'
+      //     },
+      //     {
+      //       value: 'Pakkret',
+      //       name: 'Pakkret'
+      //     },
+      //     {
+      //       value: 'bangyai',
+      //       name: 'Bangyai'
+      //     }
+      //   ]
+      // };
+
+      // const province = document.querySelector('.province');
+      // province.addEventListener('change', function(e) {
+      //   // alert('Province changed');
+      //   console.log(e.target.value)
+      //   const district = document.querySelector('.district');
+      //   const innerHTML = mapProvinceDistrict[e.target.value]
+      //     .map(item => `<option value=${item.value}>${item.name}</option>`).join('');
+      //   district.innerHTML = innerHTML;
+      // })
+
+      let count = 0;
+      const countObj = document.querySelector('.count');
+      countObj.innerHTML = count;
+
+      function clickButton(inp) {        
+        const mode = inp.value;
+        if (mode === 'add') count++;
+        else if (mode === 'reset') count = 0;
+        else {
+          if (count > 0) count--;
+        }
+        countObj.innerHTML = count;
+      }
+
+    </script>
+  </body>
+</html>
